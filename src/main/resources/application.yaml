@@ -1,0 +1,90 @@
+server:
+  port: 8080
+  tomcat:
+    connection-timeout: 60000
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  application:
+    name: blog
+  data:
+    mongodb:
+      host: 121.36.104.226
+      port: 27017
+      database: blog
+      username: blog
+      password: lzj439949
+    redis:
+      host: 121.36.104.226
+      password: lzj439949
+      database: 0
+      port: 6379
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1
+          max-idle: 8
+          min-idle: 3
+#  shardingsphere:
+#    rules:
+#      readwrite-splitting:
+#        data-sources:
+#          readWrite:
+#            load-balancer-name: round
+#            static-strategy:
+#              write-data-source-name: master
+#              read-data-source-names:
+#                - slave1
+#                - slave2
+#        load-balancers:
+#          round:
+#            type: ROUND_ROBIN
+#    datasource:
+#      names: master,slave1,slave2
+#      #写数据库
+#      master:
+#        type: com.zaxxer.hikari.HikariDataSource
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        jdbc-url: jdbc:mysql://121.36.104.226:3306/blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+#        username: root
+#        password: lzj439949
+#      slave1:
+#        type: com.zaxxer.hikari.HikariDataSource
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        jdbc-url: jdbc:mysql://121.36.104.226:3307/blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+#        username: root
+#        password: lzj439949
+#      slave2:
+#        type: com.zaxxer.hikari.HikariDataSource
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        jdbc-url: jdbc:mysql://121.36.104.226:3308/blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+#        username: root
+#        password: lzj439949
+#    props:
+#      sql-show: true
+  datasource:
+    url: jdbc:mysql://121.36.104.226:3306/blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: blog
+    password: lzj439949
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime: 30000   #不能小于30秒，否则默认回到1800秒
+blog:
+  file:
+    accessKey: Srn-Cor45urXKFuuw9UGzwKFPgmJaQfhVZ5p0-7M
+    secretKey: ekuLcE7yeNg_bq_6WuUAYIywiHC2gx8Sz4wYKJt4
+    bucket: lymlzj
+    url: http://rusndkp3v.bkt.clouddn.com/
+    upload:
+      path: blogFile/%s/
+      #path: d:\blogFile\%s\
+  token:
+    secret: TdsvR0FO+T1oI+wAmO8WZiJ8VumE32UTjosucnpBeLCWUcMA+WVyO526t+LrYannNhXjvD9Off1JTmpKH7p/btjcW8pOIozcc64z0NcEofT69s58BAWTss1GFADOxEdxRdFT7Q9Qiqz6WmTOQJT1/xXpkI4lJp4hRUnCFMRoalo=
